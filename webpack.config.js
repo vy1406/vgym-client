@@ -20,13 +20,14 @@ module.exports = {
     },
     
     devServer: {
+       static:{ 
+        directory: path.resolve(__dirname,'dist'),
+       },
         historyApiFallback: true,
-        proxy: {
-          '/api': {
-            target: 'http://localhost:5000',//TODO: change this to actual port of web api server
-            changeOrigin: true
-          }
-        }
+        port: 3000,
+        hot: true,
+        compress: true,
+        open: true,
     },
     module: {
         rules: [
