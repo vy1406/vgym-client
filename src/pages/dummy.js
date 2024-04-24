@@ -1,32 +1,33 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ROUTES } from '../Routes';
 function Dummy(){
     
     return <>
     <ul>
         <li>
-            <Link to="/">Home</Link>
+            <Link to={ROUTES.Base}>Home</Link>
         </li>
         <li>
-            <Link to="/dashboard">Dashboard</Link>
+            <Link to={ROUTES.Dashboard}>Dashboard</Link>
         </li>
         <li>
-            <Link to="/login">Login</Link>
+            <Link to={ROUTES.Login}>Login</Link>
         </li>
         <li>
-            <Link to="/notes">Notes</Link>
+            <Link to={ROUTES.Notes}>Notes</Link>
         </li>
         <li>
-            <Link to="/profile">Profile</Link>
+            <Link to={ROUTES.Profile}>Profile</Link>
         </li>
         <li>
-            <Link to="/signup">Sign up</Link>
+            <Link to={ROUTES.Signup}>Sign up</Link>
         </li>
         <li>
-            <Link to="/todo">Todo</Link>
+            <Link to={ROUTES.Todo}>Todo</Link>
         </li>
         <li>
-            <Link to="/workouts">Workouts</Link>
+            <Link to={ROUTES.Workouts}>Workouts</Link>
         </li>
     </ul>
         
