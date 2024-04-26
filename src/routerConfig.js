@@ -1,5 +1,5 @@
-import Dummy from "./pages/dummy"
-import Dashboard from "./pages/dashboard"
+import Dummy from "./pages/Dummy"
+import Dashboard from "./pages/Dashboard"
 import Login from "./pages/login"
 import Signup from "./pages/signup"
 import Notes from "./pages/notes"
@@ -7,42 +7,52 @@ import Profile from "./pages/profile"
 import Todo from "./pages/todo"
 import Workouts from "./pages/workouts"
 import NotFound from './pages/notFound';
-import { ROUTES } from './Routes';
 import { createBrowserRouter } from "react-router-dom"
 import React from 'react';
 
+export const ROUTES ={
+    BASE: "/",
+    LOGIN: "/login",
+    PROFILE: "/profile",
+    SIGN_UP: "/signup",
+    DASHBOARD: "/dashboard",
+    WORKOUTS: "/workouts",
+    TODO: "/todo",
+    NOTES: "/notes",  
+}
+
 export const myRouter = createBrowserRouter([
     {
-        path: ROUTES.Base,
+        path: ROUTES.BASE,
         element: <Dummy/>,
         errorElement: <NotFound/>
     },
     {
-        path: ROUTES.Dashboard,
+        path: ROUTES.DASHBOARD,
         element: <Dashboard/>
     },
     {
-        path: ROUTES.Login,
+        path: ROUTES.LOGIN,
         element: <Login/>
     },
     {
-        path: ROUTES.Signup,
+        path: ROUTES.SIGN_UP,
         element: <Signup/>
     },
     {
-        path: ROUTES.Notes,
+        path: ROUTES.NOTES,
         element: <Notes/>
     },
     {
-        path: ROUTES.Profile,
+        path: ROUTES.PROFILE,
         element: <Profile/>
     },
     {
-        path: ROUTES.Todo,
+        path: ROUTES.TODO,
         element: <Todo/>
     },
     {
-        path: ROUTES.Workouts,
+        path: ROUTES.WORKOUTS,
         element: <Workouts/>
     }
   ]);
