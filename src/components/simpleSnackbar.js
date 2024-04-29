@@ -5,10 +5,10 @@ import { useState } from "react";
 
 export default function SimpleSnackbar({text,type}) {
    
-    const [open, setOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     const handleClick = () => {
-      setOpen(true);
+      setIsOpen(true);
     };
   
     const handleClose = (event, reason) => {
@@ -16,7 +16,7 @@ export default function SimpleSnackbar({text,type}) {
         return;
       }
   
-      setOpen(false);
+      setIsOpen(false);
     };
   
    
@@ -24,7 +24,7 @@ export default function SimpleSnackbar({text,type}) {
     return (
       <div>
         <Button variant="contained" onClick={handleClick}>Open Snackbar</Button>
-        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Snackbar open={isOpen} autoHideDuration={6000} onClose={handleClose}>
           <Alert
             onClose={handleClose}
             severity={type}
