@@ -3,7 +3,7 @@ import { Button,Snackbar,Alert} from "@mui/material";
 import { useState } from "react";
 
 
-export default function SimpleSnackbar(props) {
+export default function SimpleSnackbar({text,type}) {
    
     const [open, setOpen] = useState(false);
 
@@ -27,11 +27,11 @@ export default function SimpleSnackbar(props) {
         <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
           <Alert
             onClose={handleClose}
-            severity={props.type}
+            severity={type}
             variant="filled"
             sx={{ width: '100%' }}
             >
-            {props.text}
+            {text}
           </Alert>
          
           

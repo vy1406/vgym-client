@@ -1,39 +1,42 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routerConfig';
-import LolButton from '../../components/lolButton';
 import InputField from '../../components/inputField';
-import DialogButton from '../../components/dialogField';
 import { useState } from 'react';
 import DialogField from '../../components/dialogField';
 import Snackbar from '../../components/simpleSnackbar';
+import SimpleButton from '../../components/simpleButton';
+
+export const SNACKBAR_TYPES = {
+    SUCCESS: "success",
+    ERROR: "error",
+    INFO: "info",
+    WARNING: "warning"
+}
 function Dummy(){
-    const [open, setOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
     const dialogTitle = "Dummy Title";
     const dialogText = "Dummy Text";
-    const snackbarButtonType = "error";
     const snackbarText = "Snackbar Dummy";
 
-    const handleInputFieldChange = (e) => {
+    const handleInputFieldOnChange = (e) => {
         console.log(e.target.value);
     }
 
-    const handleLolButtonClick = () => {
+    const handleSimpleButtonOnClick = () => {
         alert("LOL!!!");
     };
 
-    
-
-    const handleDialogClickOpen = () => {
-        setOpen(true);
+    const handleDialogOnClickOpen = () => {
+        setIsOpen(true);
     }
 
-    const handleDialogClickClose = () => {
-        setOpen(false);
+    const handleDialogOnClickClose = () => {
+        setIsOpen(false);
     };
 
-    const handleDialogClickContinue = ()=> {
-        setOpen(false);
+    const handleDialogOnClickContinue = ()=> {
+        setIsOpen(false);
         console.log("Continue was pressed!");
     }
     
@@ -65,20 +68,20 @@ function Dummy(){
         </li>
     </ul>
 
-    <LolButton handleOnClick={handleLolButtonClick}/>
+    <SimpleButton handleOnClick={handleSimpleButtonOnClick}/>
     <br/>
-    <InputField handleOnChange={handleInputFieldChange}/>
+    <InputField handleOnChange={handleInputFieldOnChange}/>
     <br/>
     <DialogField
-     handleClick={handleDialogClickOpen} 
-     handleClose={handleDialogClickClose}
-     handleContinue={handleDialogClickContinue}
-     open={open}
+     handleOnClick={handleDialogOnClickOpen} 
+     handleOnClose={handleDialogOnClickClose}
+     handleOnContinue={handleDialogOnClickContinue}
+     isOpen={isOpen}
      title={dialogTitle}
      text={dialogText}
      />
      <br/>
-     <Snackbar type={snackbarButtonType} text={snackbarText}/>
+     <Snackbar type={SNACKBAR_TYPES.ERROR} text={snackbarText}/>
         
         
     </>
