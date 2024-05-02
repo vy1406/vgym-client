@@ -1,42 +1,38 @@
 import React from "react";
-import { Button,Snackbar,Alert} from "@mui/material";
-import { useState } from "react";
+import { Button, Snackbar, Alert } from "@mui/material";
+import { INIT_SNACKBAR, useGlobalContext } from "../context/globalContext";
 
+export default function SimpleSnackbar() {
+  const { snackbarData, setSnackbarData } = useGlobalContext();
 
-export default function SimpleSnackbar({text,type}) {
-   
-    const [isOpen, setIsOpen] = useState(false);
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    snackbarData.onClose();
+    setSnackbarData(INIT_SNACKBAR);
+  };
 
-    const handleClick = () => {
-      setIsOpen(true);
-    };
-  
-    const handleClose = (event, reason) => {
-      if (reason === 'clickaway') {
-        return;
-      }
-  
-      setIsOpen(false);
-    };
-  
-   
-  
-    return (
-      <div>
-        <Button variant="contained" onClick={handleClick}>Open Snackbar</Button>
-        <Snackbar open={isOpen} autoHideDuration={6000} onClose={handleClose}>
-          <Alert
-            onClose={handleClose}
-            severity={type}
-            variant="filled"
-            sx={{ width: '100%' }}
-            >
-            {text}
-          </Alert>
-         
-          
-        </Snackbar>
-      </div>
-    );
+  if (!snackbarData?.isOpen) {
+    return null;
+  }
 
+  return (
+    <div>
+      <Snackbar
+        open={snackbarData.isOpen}
+        autoHideDuration={3000}
+        onClose={handleClose}
+      >
+        <Alert
+          onClose={handleClose}
+          severity={snackbarData.type}
+          variant="filled"
+          sx={{ width: "100%" }}
+        >
+          {snackbarData.title}
+        </Alert>
+      </Snackbar>
+    </div>
+  );
 }
