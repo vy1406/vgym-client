@@ -8,6 +8,7 @@ function App() {
     <>
       <RouterProvider router={myRouter} />
       <SimpleSnackbar />
+      <SimpleDialog/>
     </>
   );
 }
