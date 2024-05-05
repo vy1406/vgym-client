@@ -1,10 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../routerConfig";
-import SimpleDialog from "../../components/simpleDialog";
 import { Button } from "@mui/material";
 import { SNACKBAR_TYPES, useGlobalContext } from "../../context/globalContext";
-import PasswordInput from "../../components/passwordInput";
 
 function Dummy() {
   const {setSnackbarData } = useGlobalContext();

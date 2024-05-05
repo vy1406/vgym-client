@@ -1,3 +1,4 @@
 export const RESOURCE = {
-    PASSWORD: 'Password :'
+    PASSWORD: 'Password :',
+    USERNAME: 'Username :',
 }

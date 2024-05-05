@@ -2,7 +2,7 @@ import React from "react";
 import { TextField } from "@mui/material";
 import { RESOURCE } from "../resource";
 
-function PasswordInput() {
+function PasswordInput({handleOnChange,value}) {
   return (
     <>
       <label htmlFor="password">{RESOURCE.PASSWORD}</label>
@@ -11,6 +11,9 @@ function PasswordInput() {
         type="password"
         label="Password"
         id="password"
+        onChange={handleOnChange}
+        value={value}
+        name="password"
       ></TextField>
     </>
   );
