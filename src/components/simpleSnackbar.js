@@ -30,7 +30,7 @@ export default function SimpleSnackbar() {
           variant="filled"
           sx={{ width: "100%" }}
         >
-          {snackbarData.title}
+          {snackbarData.body}
         </Alert>
       </Snackbar>
     </div>

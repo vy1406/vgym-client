@@ -1,6 +1,6 @@
 import Dummy from "./pages/Dummy"
 import Dashboard from "./pages/Dashboard"
-import Login from "./pages/login"
+import Login from "./pages/Login"
 import Signup from "./pages/signup"
 import Notes from "./pages/notes"
 import Profile from "./pages/profile"

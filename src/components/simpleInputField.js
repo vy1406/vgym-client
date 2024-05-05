@@ -1,10 +1,10 @@
 import React from "react";
 import { TextField} from "@mui/material";
 
-export default function SimpleInputField({handleOnChange}) {
+export default function SimpleInputField({lable,defaultValue}) {
    
     return (
-        <TextField variant="outlined" onChange={handleOnChange}></TextField>
+        <TextField variant={veriant} lable={lable} defaultValue={defaultValue}/>
     );
 
 }

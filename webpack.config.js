@@ -23,11 +23,14 @@ module.exports = {
        static:{ 
         directory: path.resolve(__dirname,'dist'),
        },
-        historyApiFallback: true,
+       //since i use react router there is no need for 
+       //fallback to index in case of an unknown path
+        // historyApiFallback: true,
         port: 3000,
         hot: true,
         compress: true,
         open: true,
+        
     },
     module: {
         rules: [

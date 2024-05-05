@@ -1,23 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../routerConfig";
-import SimpleInputField from "../../components/simpleInputField";
-import SimpleDialog from "../../components/simpleDialog";
-import SimpleButton from "../../components/simpleButton";
 import { Button } from "@mui/material";
 import { SNACKBAR_TYPES, useGlobalContext } from "../../context/globalContext";
 
 function Dummy() {
   const {setSnackbarData } = useGlobalContext();
   const {setDialogData} = useGlobalContext();
-
-  const handleInputFieldOnChange = (e) => {
-    console.log(e.target.value);
-  };
-
-  const handleSimpleButtonOnClick = () => {
-    alert("LOL!!!");
-  };
 
   const handleDialogButtonOnClick = () => {
     setDialogData({
@@ -38,7 +27,7 @@ function Dummy() {
   const handleSnackbarButtonOnClick = () => {
     setSnackbarData({
       isOpen: true,
-      title: "My title text",
+      body: "My title text",
       type: SNACKBAR_TYPES.INFO,
       onClose: () => {
         console.log("Close was pressed!");
@@ -78,11 +67,7 @@ function Dummy() {
         </li>
       </ul>
 
-      <SimpleButton handleOnClick={handleSimpleButtonOnClick} />
-      <br />
-      <SimpleInputField handleOnChange={handleInputFieldOnChange} />
-      <br />
-      <SimpleDialog/>
+      
       <br />
       <Button variant="contained" onClick={handleSnackbarButtonOnClick}>
         Open Snackbar
@@ -91,6 +76,7 @@ function Dummy() {
       <Button variant="contained" onClick={handleDialogButtonOnClick}> 
         Open Dialog
       </Button>
+      
     </>
   );
 }

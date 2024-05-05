@@ -1,11 +1,11 @@
 import React from "react";
 import { Button} from "@mui/material";
 
-export default function SimpleButton({handleOnClick}) {
+export default function SimpleButton({color,handleOnClick,buttonValue}) {
    
     return (
-        <Button variant="contained" color="success" onClick={handleOnClick}>
-            LOL ME
+        <Button variant={veriant} color={color} onClick={handleOnClick}>
+            {buttonValue}
         </Button>
     );
 
