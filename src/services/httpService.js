@@ -1,7 +1,7 @@
 import axios from "axios";
 
 class HttpService {
-  //can be done by creating an apiurl using axios.create and giving it a base url.
+  //can be done by creating an apiurl using axios.create and giving it a base url,**just like i did in dotnet flight simulator**.
   // each crud operation will accept an additional parameter that states
   // the endpoint controller
   constructor(apiEndpoint = "/") {
