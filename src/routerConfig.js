@@ -9,6 +9,7 @@ import Workouts from "./pages/Workouts"
 import NotFound from './pages/NotFound';
 import { createBrowserRouter } from "react-router-dom"
 import React from 'react';
+import LandingPage from "./pages/LandingPage"
 
 export const ROUTES ={
     BASE: "/",
@@ -24,7 +25,7 @@ export const ROUTES ={
 export const myRouter = createBrowserRouter([
     {
         path: ROUTES.BASE,
-        element: <Dummy/>,
+        element: <LandingPage/>,
         errorElement: <NotFound/>
     },
     {

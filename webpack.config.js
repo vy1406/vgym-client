@@ -39,6 +39,10 @@ module.exports = {
                 use: ['style-loader','css-loader','sass-loader']
             },
             {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader'],
+            },
+            {
                 //allows backwords compatibility with ES6
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,//these files are already transpiled
