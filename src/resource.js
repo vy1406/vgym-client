@@ -3,4 +3,6 @@ export const RESOURCE = {
     USERNAME: 'Username :',
     SIGN_UP: 'Sign Up',
     LOGIN: 'Login',
+    CANCEL: 'Cancel',
+
 }
